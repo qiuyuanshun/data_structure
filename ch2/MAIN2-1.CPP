@@ -3,7 +3,7 @@
  typedef int ElemType;
  #include"c2-1.h"
  #include"bo2-1.cpp"
-
+using namespace std;
  Status comp(ElemType c1,ElemType c2) // 数据元素判定函数(平方关系)
  {
    if(c1==c2*c2)
@@ -14,7 +14,7 @@
 
  void visit(ElemType &c) // ListTraverse()调用的函数(类型要一致)
  {
-   cout<<c<<' ';
+     std::cout<<c<<' ';
  }
 
  void dbl(ElemType &c) // ListTraverse()调用的另一函数(元素值加倍)
@@ -22,7 +22,7 @@
    c*=2;
  }
 
- void main()
+ int main()
  {
    SqList L;
    ElemType e,e0;
@@ -34,8 +34,8 @@
      i=ListInsert(L,1,j);
    printf("在L的表头依次插入1～5后：*L.elem=");
    for(j=1;j<=5;j++)
-     cout<<*(L.elem+j-1)<<' ';
-   cout<<endl;
+   std::cout<<*(L.elem+j-1)<<' '<<std::endl;
+
    printf("L.elem=%u L.length=%d L.listsize=%d\n",L.elem,L.length,L.listsize);
    i=ListEmpty(L);
    printf("L是否空：i=%d(1:是 0:否)\n",i);
